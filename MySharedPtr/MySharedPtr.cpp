@@ -48,3 +48,44 @@ MySharedPtr<DataT>::~MySharedPtr() {
     }
 
 }
+
+template<typename DataT>
+DataT * MySharedPtr<DataT>::get() const {
+    return proxy_ptr_->resource_;
+}
+
+template<typename DataT>
+DataT MySharedPtr<DataT>::operator*() const {
+    return *get();
+}
+
+template<typename DataT>
+DataT * MySharedPtr<DataT>::operator->() const {
+    return get();
+}
+
+template<typename DataT>
+sizeT MySharedPtr<DataT>::use_count() const {
+    return proxy_ptr_->refCount_;
+}
+
+template<typename DataT>
+MySharedPtr<DataT>::operator bool() const {
+
+    if(proxy_ptr_ && proxy_ptr_->resource_){
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+template<typename DataT>
+void MySharedPtr<DataT>::swap(MySharedPtr& rhs) {
+    std::swap(proxy_ptr_, rhs.proxy_ptr_);
+}
+
+template<typename DataT>
+void MySharedPtr<DataT>::reset(DataT * ptr) {
+    MySharedPtr<DataT>(ptr).swap(*this);
+}
