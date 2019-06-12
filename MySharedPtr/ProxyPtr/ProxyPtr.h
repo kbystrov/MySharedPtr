@@ -20,15 +20,6 @@ public:
 
     ProxyPtr(DataT * ptr);
     ~ProxyPtr();
-
-    /*
-    void setResource(DataT * resource);
-    DataT * getResource() const;
-    sizeT getRefCount() const;
-
-    void operator++();
-    void operator--();
-    */
 };
 
 

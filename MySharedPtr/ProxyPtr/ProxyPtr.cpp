@@ -24,25 +24,3 @@ ProxyPtr<DataT>::~ProxyPtr() {
     resource_ = nullptr;
     refCount_ = 0;
 }
-
-/*
-template<typename DataT>
-void ProxyPtr<DataT>::setResource(DataT * resource) {
-    resource_ = resource;
-}
-
-template<typename DataT>
-DataT * ProxyPtr<DataT>::getResource() const {
-    return resource_;
-}
-
-template<typename DataT>
-void ProxyPtr<DataT>::operator++() {
-    refCount_++;
-}
-
-template<typename DataT>
-void ProxyPtr<DataT>::operator--() {
-    refCount_--;
-}
-*/
