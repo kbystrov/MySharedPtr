@@ -1,13 +1,14 @@
-#include "MySharedPtr.h"
+#ifndef MYSHAREDPTR_MYSHAREDPTR_HPP
+#define MYSHAREDPTR_MYSHAREDPTR_HPP
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 /** @file */
 
 template<typename DataT>
 MySharedPtr<DataT>::MySharedPtr(DataT * resource) {
-    #ifdef PROJ_DEBUG
+#ifdef PROJ_DEBUG
     errno = 0;
-    #endif // !PROJ_DEBUG
+#endif // !PROJ_DEBUG
 
     proxy_ptr_ = new ProxyPtr<DataT>(resource);
 }
@@ -89,3 +90,5 @@ template<typename DataT>
 void MySharedPtr<DataT>::reset(DataT * ptr) {
     MySharedPtr<DataT>(ptr).swap(*this);
 }
+
+#endif //MYSHAREDPTR_MYSHAREDPTR_HPP

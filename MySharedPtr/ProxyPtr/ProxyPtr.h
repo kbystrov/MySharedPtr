@@ -22,5 +22,6 @@ public:
     ~ProxyPtr();
 };
 
+#include "ProxyPtr.hpp"
 
 #endif //MYSHAREDPTR_PROXYPTR_H

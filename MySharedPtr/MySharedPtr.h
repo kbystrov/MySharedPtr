@@ -29,5 +29,6 @@ public:
     void reset(DataT * ptr = nullptr); ///< Replaces the managed object with an object pointed by the ptr
 };
 
+#include "MySharedPtr.hpp"
 
 #endif //MYSHAREDPTR_MYSHAREDPTR_H

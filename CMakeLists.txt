@@ -9,4 +9,4 @@ set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra \
 -I${PROJECT_SOURCE_DIR}/MySharedPtr/ProxyPtr \
 -I${PROJECT_SOURCE_DIR}/Common ")
 
-add_executable(mySharedPtr main.cpp MySharedPtr/MySharedPtr.cpp MySharedPtr/MySharedPtr.h MySharedPtr/ProxyPtr/ProxyPtr.cpp MySharedPtr/ProxyPtr/ProxyPtr.h Common/err_codes.h Common/proj_macros.h)
+add_executable(exetuble main.cpp MySharedPtr/MySharedPtr.h MySharedPtr/ProxyPtr/ProxyPtr.h Common/err_codes.h Common/proj_macros.h MySharedPtr/MySharedPtr.hpp MySharedPtr/ProxyPtr/ProxyPtr.hpp)
